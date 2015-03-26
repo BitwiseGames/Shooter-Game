@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body onload="init();">
+  <canvas id="gameCanvas" width="600" height="800"></canvas>
+  <script src="https://code.createjs.com/easeljs-0.8.0.min.js"></script>
+  <script src="https://code.createjs.com/tweenjs-0.6.0.min.js"></script>
+  <script src = "game_script.js"></script>
+  <script>
+    //this gets called when the page loads
+    function init() {
+      stage.addChild(background);
+      var startText = new createjs.Text("Start", "100px TlwgMono", "White");
+      startText.x = 160;
+      startText.y = 200;
+      stage.addChild(startText);
+      startText.addEventListener("click", startGame);
+      stage.update();
+    }
+  </script>
+</body>
+</html>
