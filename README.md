@@ -7,7 +7,7 @@ Just the vertical 2D shooter that Drew wanted me to make.
 -Open Terminal and write:
 ```python
 cd Directory ##where "directory" is the name of the folder that you saved the files into
-python -m SimpleHTTPServer: 8000
+python -m SimpleHTTPServer
 ```
 
 Open up a web browser, and type https://127.0.0.1:8000 into the URL bar<br>
