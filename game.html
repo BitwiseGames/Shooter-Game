@@ -10,9 +10,23 @@
     function init() {
       stage.addChild(background);
       var startText = new createjs.Text("Start", "100px TlwgMono", "White");
+      var controls = new createjs.Text("WASD to move, space to shoot.", "bold 30px TlwgMono", "white");
+
       startText.x = 160;
       startText.y = 200;
+      controls.x = 50;
+      controls.y = 400;
+
+      var hitBox = new createjs.Shape();
+      hitBox.graphics.beginFill("#000"); // invisible
+      hitBox.graphics.drawRect(0, 0, startText.getMeasuredWidth(), startText.getMeasuredHeight());
+      startText.hitArea = hitBox;
+
+      //console.log(rect.x, rect.y, rect.width, rect.height);
+
       stage.addChild(startText);
+      stage.addChild(controls);
+
       startText.addEventListener("click", startGame);
       stage.update();
     }
