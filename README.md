@@ -10,5 +10,5 @@ python -m SimpleHTTPServer
 ```
 
 - Open up a web browser, and type https://127.0.0.1:8000 into the URL bar
-- Double click game.htm to start the game 
-- If game.htm is not there, make sure you are in the right directory
+- Double click game.html to start the game 
+- If game.html is not there, make sure you are in the right directory
