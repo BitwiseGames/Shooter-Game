@@ -39,7 +39,6 @@ function startGame() {
   stage.addChild(background);
 
   scoreBox.x = 325;
-  stage.addChild(scoreBox);
 
   // create player
   player.graphics.beginFill("#C9c9c9");
@@ -168,6 +167,7 @@ function createDebris(Y) {
 }
 
 function updateHUD() {
+  stage.removeChild(scoreBox);
   stage.removeChild(healthBar); //remove the old one
   healthBar = new createjs.Shape(); //recreate it
   var length = 30 * player.health; //edit it
@@ -179,6 +179,7 @@ function updateHUD() {
   stage.addChild(healthBar); // add the new one
 
   scoreBox.text = "Score: " + gameScore;
+  stage.addChild(scoreBox);
  }
 
 function updatePlayer() {
