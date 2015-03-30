@@ -39,7 +39,7 @@ function startGame() {
   stage.addChild(background);
 
   scoreBox.x = 325;
-
+  
   // create player
   player.graphics.beginFill("#C9c9c9");
   player.graphics.moveTo(0, 0);
@@ -76,12 +76,12 @@ function startGame() {
 function mainLoop() {
   if (gameRunning === true) {
     updatePlayer();
+    updateHUD();
     bulletMove();
     updateDebris();
     updateEnemies();
     collisions();
     updateBuffs();
-    updateHUD();
     stage.update();
   }
 }
@@ -240,7 +240,7 @@ function playerMove() {
 function updateEnemies() {
   for (var i = 0; i < enemies.length; i++) {
    enemies[i].y += enemies[i].speed;
-   if (enemies[i].y + enemies[i].radius > stage.canvas.height) {
+   if (enemies[i].y - enemies[i].radius > stage.canvas.height) {
      stage.removeChild(enemies[i]);
      enemies.splice(i, 1);
      createEnemy();
@@ -390,6 +390,7 @@ function playerEnemyCollisions() {
       player.health--;
       if (player.health <= 0) {
         gameOver();
+        return;
       }
       createEnemy();
     }
