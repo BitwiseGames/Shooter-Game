@@ -22,7 +22,7 @@ var bullets = [];
 // the squares on the top and bottom of the screen
 var debris = [];
 const DEBRIS_SIZE = 50;
-const MAX_DEBRIS = stage.canvas.width / DEBRIS_SIZE; // the max that will fit horizontally on the screen
+const MAX_DEBRIS = stage.canvas.height / DEBRIS_SIZE; // the max that will fit vertically on the screen
 
 var enemies = [];
 const MAX_ENEMIES = 5;
